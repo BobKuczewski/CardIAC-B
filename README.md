@@ -55,7 +55,7 @@ As with most computers, the "processor" itself only understands these numeric in
 However, people generally prefer to think in words rather than numbers. So people
 tend to assign a different word or abbreviation to each **type** of numeric instruction.
 That allows people to write programs using familiar words and abbreviations rather than
-numbers. Then, when a program has been written, it can be translated into the numbers
+numbers. Then, when a program has been written in words, it can be translated into the numbers
 that the computer itself understands. The numerical representation of each instruction
 is often called "**machine code**". The people-friendly version is
 often called "**assembly code**". So people generally write computer programs in
@@ -74,16 +74,16 @@ instruction name, the CardIAC-B instruction name, and the instruction's descript
 
 | Machine&nbsp;Code | CardIAC | CardIAC&#8209;B | Description |
 | :----------- | :---------: | :-----------: | :---------- |
-| **0**MM      | **INP** MM  | **IN** MM     | Read a card into memory location MM and advance the card |
-| **1**MM      | **CLA** MM  | **LD** MM     | Load a value from memory location MM into the accumulator |
-| **2**MM      | **ADD** MM  | **ADD** MM    | Add contents of memory location MM to accumulator |
-| **3**MM      | **TAC** MM  | **JLZ** MM    | Test accumulator and jump if negative to location MM |
-| **4**XY      | **SFT** XY  | **SHF** XY    | Shift left by X digits and then shift right by Y digits |
-| **5**MM      | **OUT** MM  | **OUT** MM    | Print contents of memory location MM to output card and advance |
-| **6**MM      | **STO** MM  | **STO** MM    | Store contents of accumulator into memory location MM |
-| **7**MM      | **SUB** MM  | **SUB** MM    | Subtract contents of memory location MM from accumulator |
-| **8**MM      | **JMP** MM  | **JMP** MM    | Jump to to memory location MM and store previous location in 99 |
-| **9**MM      | **HRS** MM  | **HLT** MM    | Halt machine and reset program counter to MM |
+| **0**MM      | **INP**&nbsp;MM  | **IN**&nbsp;MM     | Read a card into memory location MM and advance the card |
+| **1**MM      | **CLA**&nbsp;MM  | **LD**&nbsp;MM     | Load a value from memory location MM into the accumulator |
+| **2**MM      | **ADD**&nbsp;MM  | **ADD**&nbsp;MM    | Add contents of memory location MM to accumulator |
+| **3**MM      | **TAC**&nbsp;MM  | **JLZ**&nbsp;MM    | Test accumulator and jump if negative to location MM |
+| **4**XY      | **SFT**&nbsp;XY  | **SHF**&nbsp;XY    | Shift left by X digits and then shift right by Y digits |
+| **5**MM      | **OUT**&nbsp;MM  | **OUT**&nbsp;MM    | Print contents of memory location MM to output card and advance |
+| **6**MM      | **STO**&nbsp;MM  | **STO**&nbsp;MM    | Store contents of accumulator into memory location MM |
+| **7**MM      | **SUB**&nbsp;MM  | **SUB**&nbsp;MM    | Subtract contents of memory location MM from accumulator |
+| **8**MM      | **JMP**&nbsp;MM  | **JMP**&nbsp;MM    | Jump to to memory location MM and store previous location in 99 |
+| **9**MM      | **HRS**&nbsp;MM  | **HLT**&nbsp;MM    | Halt machine and reset program counter to MM |
 
 The "MM" in most of these instructions stands for a 2 digit memory address which can range from 00 to 99.
 
