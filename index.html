@@ -159,6 +159,7 @@ class Memory {
       this.mem.push ( new MemCell() );
     }
     this.mem[0].set_value ( 1 );
+    this.mem[99].set_value ( 800 );
   }
   to_string () {
     let ms = "";
@@ -184,14 +185,22 @@ class Memory {
           let nm = new MemCell();
           if (ms[i] == '_') {
             // This is an empty location
-            nm.set_empty();
+            if (next_addr == 99) {
+              nm.set_value ( 800 + (nn % 100) );
+            } else {
+              nm.set_empty();
+            }
           } else {
             // Assume that this is a decimal number
             let nn = Number(ms[i]);
             if (isNaN(nn)) {
               nm.set_empty();
             } else {
-              nm.set_value(nn);
+              if (next_addr == 99) {
+                nm.set_value ( 800 + (nn % 100) );
+              } else {
+                nm.set_value(nn);
+              }
             }
           }
           this.mem[next_addr] = nm;
@@ -525,7 +534,11 @@ function set_mem ( mouse_down_x, mouse_down_y ) {
             if (isNaN(Number(answer))) {
               mem.mem[index].set_empty();
             } else {
-              mem.mem[index].set_value ( Number(answer) );
+              if (index == 99) {
+                mem.mem[index].set_value ( 800 + (Number(answer) % 100) );
+              } else {
+                mem.mem[index].set_value ( Number(answer) );
+              }
             }
             draw_computer();
           }
