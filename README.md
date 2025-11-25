@@ -43,44 +43,49 @@ an on-line version of CardIAC-B. It's best to move that page to a separate
 browser window so you can easily switch between these instructions and that
 computer simulation.
 
-## CardIAC-B Instruction Set
+## CardIAC and CardIAC-B Instruction Sets
 
-The CardIAC computer understands 10 instructions. These 10 instructions are represented
-as decimal numbers from 0 through 9. As with most computers, the "processor" itself
-only understands these 10 instructions when represented as numbers. However, people
-generally prefer to think in words rather than numbers. So people tend to assign a
-different word or abbreviation to each numeric instruction. That allows people to
-write programs using familiar words and abbreviations rather than numbers. Then,
-when the program has been writted, it can be translated into the numbers that the
-computer itself understands. The numerical representation of each instruction is
-often called "machine code" or "binary code". The people-friendly version is
-often called "assembly language". So people will often write computer programs in
-the "assembly language" and translate it to "machine code" either by hand or using
-another computer program called an "assembler".
+The CardIAC "computer" itself only understands 10 basic instructions. These 10
+basic instructions are represented as 3 decimal digits per instruction. The first
+digit specifies the **type** of instruction (add, load, store, shift, jump, ...).
+The last two digits are **parameters** describing what specific data to use for the
+instruction.
+
+As with most computers, the "processor" itself only understands these numeric instructions.
+However, people generally prefer to think in words rather than numbers. So people
+tend to assign a different word or abbreviation to each **type** of numeric instruction.
+That allows people to write programs using familiar words and abbreviations rather than
+numbers. Then, when a program has been written, it can be translated into the numbers
+that the computer itself understands. The numerical representation of each instruction
+is often called "**machine code**". The people-friendly version is
+often called "**assembly code**". So people generally write computer programs in
+"assembly code" (or "assembly language") and translate it to "machine code" either
+by hand or using another computer program called an "assembler". Then the machine
+code can be entered into the computer.
 
 It's important to note that the people-friendly "assembly language" does not need
-to be unique. Different "assembler" programs could convert different people-friendly
-instruction words into the same resulting "machine code". There are, for example,
-at least two different "assembly languages" for the popular "x86" processor (see
+to be unique for a given instruction set. Different "assembler" programs could convert
+different people-friendly instruction words into the same resulting "machine code". There
+are, for example, at least two different "assembly languages" for the popular "x86" processor (see
 **[Wikipedia x86 Assembly Language article](https://en.wikipedia.org/wiki/X86_assembly_language)**).
-The same is true for CardIAC. The following table lists all 10 instructions of the
-CardIAC machine language ("Machine Code") followed by the original CardIAC instruction name, the CardIAC-B
-instruction name, and its description:
+The same is true for CardIAC and its variants. The following table lists all 10 instructions
+of the CardIAC machine language ("Machine Code") followed by the original CardIAC
+instruction name, the CardIAC-B instruction name, and the instruction's description:
 
-| Machine Code | CardIAC | CardIAC-B | Description |
-| :----------- | :-----: | :-------: | :---------- |
-| 0MA          | INP MA  | IN MA     | Read a card into memory location MA and advance the card |
-| 1MA          | CLA MA  | LD MA     | Load a value from memory location MA into the accumulator |
-| 2MA          | ADD MA  | ADD MA    | Add contents of memory location MA to accumulator |
-| 3MA          | TAC MA  | JLZ MA    | Test accumulator and jump if negative to location MA |
-| 4XY          | SFT XY  | SHF XY    | Shift left by X digits and then shift right by Y digits |
-| 5MA          | OUT MA  | OUT MA    | Print contents of memory location MA to output card and advance |
-| 6MA          | STO MA  | STO MA    | Store contents of accumulator into memory location MA |
-| 7MA          | SUB MA  | SUB MA    | Subtract contents of memory location MA from accumulator |
-| 8MA          | JMP MA  | JMP MA    | Jump to to memory location MA and store previous location in 99 |
-| 9MA          | HRS MA  | HLT MA    | Halt machine and reset program counter to MA |
+| Machine&nbsp;Code | CardIAC | CardIAC&#8209;B | Description |
+| :----------- | :---------: | :-----------: | :---------- |
+| **0**MM      | **INP** MM  | **IN** MM     | Read a card into memory location MM and advance the card |
+| **1**MM      | **CLA** MM  | **LD** MM     | Load a value from memory location MM into the accumulator |
+| **2**MM      | **ADD** MM  | **ADD** MM    | Add contents of memory location MM to accumulator |
+| **3**MM      | **TAC** MM  | **JLZ** MM    | Test accumulator and jump if negative to location MM |
+| **4**XY      | **SFT** XY  | **SHF** XY    | Shift left by X digits and then shift right by Y digits |
+| **5**MM      | **OUT** MM  | **OUT** MM    | Print contents of memory location MM to output card and advance |
+| **6**MM      | **STO** MM  | **STO** MM    | Store contents of accumulator into memory location MM |
+| **7**MM      | **SUB** MM  | **SUB** MM    | Subtract contents of memory location MM from accumulator |
+| **8**MM      | **JMP** MM  | **JMP** MM    | Jump to to memory location MM and store previous location in 99 |
+| **9**MM      | **HRS** MM  | **HLT** MM    | Halt machine and reset program counter to MM |
 
-The "MA" in each of these instructions stands for the 2 digit "Memory Address".
+The "MM" in most of these instructions stands for a 2 digit memory address which can range from 00 to 99.
 
 ## Simple Programming Example - Add two numbers (the hard way)
 
