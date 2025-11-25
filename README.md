@@ -434,14 +434,70 @@ the "OK" button. That will copy the program from the dialog into memory.
 
 ### Add two numbers from input cards and write their sum to an output card
 
-This program adds the first two input card numbers and produces a result on the output card.
+This program (described above) adds the first two input card numbers and produces a result on the first output card.
+Start at memory location 0.
 
-> 51 52 151 252 653 553 900
+    051 052 151 252 653 553 900
+
+
+### CardIAC Instruction Manual, Program No. 1: Adding Number "A" to Number "B" to Produce Sum "S"
+
+This program adds the first two input card numbers and produces a result on the first output card.
+Start at memory location 17.
+
+    1 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 034 035 134 235 636 536 900
+
+
+### CardIAC Instruction Manual, Program No. 2: Counting
+
+This program counts up from 1 to 5. Start at memory location 20:
+
+    1 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+    100 603 503 200 603 503 200 603 503 200 603 503 200 603 503
+
+
+### CardIAC Instruction Manual, Program No. 3: Counting Program with Loop
+
+This program counts up from 1. Start at memory location 21:
+
+    1 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 100 603 503 200 822 
+
+
+### CardIAC Instruction Manual, Program No. 4: Rocket-Launching Countdown
+
+This program counts down from 4. Start at memory location 20:
+
+    1 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ -4 119 200 618 518 321 900
+
+
+### CardIAC Instruction Manual, Program No. 5: Multiplication by a Single-Digit Multiplier
+
+This program multiplies the first two input cards together producing an output.
+Start at memory location 7.
+
+    1 _ _ _ _ _ _ 068 404 669 070 170 700 670 319 169 268 669 811 569 900
+
+
+### CardIAC Instruction Manual, Program No. 6: Reversing the Order of a Number "abc"
+
+This program reverses the 3 digit value (such as 123) from the first input card
+and places the reversed result (such as 321) on the output card.
+Start at memory location 15.
+
+    1 _ _ _ _ _ _ _ _ _ _ _ _ _ _ 039 139 431 640 139 413 240 640 139 423 410 240 640 540 900
+
+
+### CardIAC Instruction Manual, Program No. 7: Bootstrap and Loading Program for Addition
+
+This program loads itself from a set of cards. The program itself adds 2 numbers.
+Start at memory location 00 with the following numbers on the input card stack:
+
+    002 800 010 017 011 018 012 117 013 218 014 619 015 519 016 900
 
 
 ### CardIAC Instruction Manual, Program No. 8: Subroutine for "A" + "B" = SUM
 
-    1 _ _ _ _ _ _ _ _ _
+    1 _ _ _ _ _ _ _ _ _ 
     _ _ _ _ _ _ _ _ _ _
     _ _ _ _ _ _ _ _ _ _
     _ _ _ _ _ _ _ _ _ _
@@ -451,5 +507,19 @@ This program adds the first two input card numbers and produces a result on the 
     _ _ _ _ _ _ _ _ _ _
     _ _ _ _ _ _ 199 694 196 298
     698 403 295 297 800 _ _ _ _ _
+
+
+### Count from 1 to 10
+
+This program is found in the [CardIAC section of Brian Stuart's computer museum](https://www.cs.drexel.edu/~bls96/museum/cardiac.html)):
+
+#### Program code version:
+
+    1 _ _ _ 009 000	_ _ _ _ 100 605	104 322	505	105	200	605	104	700	604	812	900
+
+#### Self-loading card deck version:
+
+    002 800 010 100 011 605 012 104 013 322 014 505 015 105 016 200 
+    017 605 018 104 019 700 020 604 021 812 022 900 004 009 002 810
 
 
