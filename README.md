@@ -441,15 +441,15 @@ This program adds the first two input card numbers and produces a result on the 
 
 ### CardIAC Instruction Manual, Program No. 8: Subroutine for "A" + "B" = SUM
 
-> 1&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_
-> _&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_
-> _&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_
-> _&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_
-> _&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_
-> 95 96 97 98 886 659 559 598 900&nbsp;_
-> _&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_
-> _&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_
-> _&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;199 694 196 298
-> 698 403 295 297 800&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_
+    1 _ _ _ _ _ _ _ _ _
+    _ _ _ _ _ _ _ _ _ _
+    _ _ _ _ _ _ _ _ _ _
+    _ _ _ _ _ _ _ _ _ _
+    _ _ _ _ _ _ _ _ _ _
+    95 96 97 98 886 659 559 598 900 _
+    _ _ _ _ _ _ _ _ _ _
+    _ _ _ _ _ _ _ _ _ _
+    _ _ _ _ _ _ 199 694 196 298
+    698 403 295 297 800 _ _ _ _ _
 
 
