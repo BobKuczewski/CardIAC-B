@@ -43,6 +43,45 @@ an on-line version of CardIAC-B. It's best to move that page to a separate
 browser window so you can easily switch between these instructions and that
 computer simulation.
 
+## CardIAC-B Instruction Set
+
+The CardIAC computer understands 10 instructions. These 10 instructions are represented
+as decimal numbers from 0 through 9. As with most computers, the "processor" itself
+only understands these 10 instructions when represented as numbers. However, people
+generally prefer to think in words rather than numbers. So people tend to assign a
+different word or abbreviation to each numeric instruction. That allows people to
+write programs using familiar words and abbreviations rather than numbers. Then,
+when the program has been writted, it can be translated into the numbers that the
+computer itself understands. The numerical representation of each instruction is
+often called "machine code" or "binary code". The people-friendly version is
+often called "assembly language". So people will often write computer programs in
+the "assembly language" and translate it to "machine code" either by hand or using
+another computer program called an "assembler".
+
+It's important to note that the people-friendly "assembly language" does not need
+to be unique. Different "assembler" programs could convert different people-friendly
+instruction words into the same resulting "machine code". There are, for example,
+at least two different "assembly languages" for the popular "x86" processor (see
+**[Wikipedia x86 Assembly Language article](https://en.wikipedia.org/wiki/X86_assembly_language)**).
+The same is true for CardIAC. The following table lists all 10 instructions of the
+CardIAC machine language ("Machine Code") followed by the original CardIAC instruction name, the CardIAC-B
+instruction name, and its description:
+
+| Machine Code | CardIAC | CardIAC-B | Description |
+| :----------- | :-----: | :-------: | :---------- |
+| 0MA          | INP MA  | IN MA     | Read a card into memory location MA and advance the card |
+| 1MA          | CLA MA  | LD MA     | Load a value from memory location MA into the accumulator |
+| 2MA          | ADD MA  | ADD MA    | Add contents of memory location MA to accumulator |
+| 3MA          | TAC MA  | JLZ MA    | Test accumulator and jump if negative to location MA |
+| 4XY          | SFT XY  | SHF XY    | Shift left by X digits and then shift right by Y digits |
+| 5MA          | OUT MA  | OUT MA    | Print contents of memory location MA to output card and advance |
+| 6MA          | STO MA  | STO MA    | Store contents of accumulator into memory location MA |
+| 7MA          | SUB MA  | SUB MA    | Subtract contents of memory location MA from accumulator |
+| 8MA          | JMP MA  | JMP MA    | Jump to to memory location MA and store previous location in 99 |
+| 9MA          | HRS MA  | HLT MA    | Halt machine and reset program counter to MA |
+
+The "MA" in each of these instructions stands for the 2 digit "Memory Address".
+
 ## Simple Programming Example - Add two numbers (the hard way)
 
 This tutorial will walk you through writing and executing a simple program
